@@ -1,3 +1,10 @@
+*,
+*::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -14,24 +21,26 @@ body {
 h1,
 h2,
 h3 {
-  margin-bottom: 1rem;
   margin-top: 0;
   line-height: 1.5;
 }
 
 h1 {
   color: #4f4f4f;
+  margin-bottom: 2.4rem;
   font-size: 2.4rem;
 }
 
 h2 {
   color: #000;
+  margin-bottom: 2rem;
   font-size: 1.6rem;
 }
 
 p {
   margin-top: 0;
 }
+
 .navbar {
   margin-top: 24px;
   display: flex;
@@ -69,41 +78,39 @@ p {
 }
 
 .image-gallery {
-  margin-top: 50px;
   display: flex;
+  width: 100vw;
   justify-content: center;
+  max-width: 1140px;
   align-items: center;
-  gap: 10px;
-}
-
-.first-img-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.third-img-col {
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
   gap: 10px;
 }
 
 .container {
+  max-width: 985px;
+  margin: 20px auto;
+}
+
+.main-container {
   display: flex;
+  margin: 20px auto;
   gap: 120px;
-  margin: 36px 200px;
+}
+
+.nav-container {
+  max-width: 1440px;
+  margin: 20px auto;
 }
 
 .first-container,
 .second-container {
   display: flex;
-  width: 80%;
   flex-direction: column;
-  gap: 2rem;
+  row-gap: 4rem;
 }
 
 .icon-section {
-  margin: 2rem 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -173,7 +180,6 @@ p {
 .report {
   display: flex;
   justify-content: space-between;
-  width: 80%;
 }
 
 .list-values .list-item {
@@ -183,7 +189,7 @@ p {
 .card {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
   align-items: center;
   border-radius: 6px;
   border: 1px solid #9cb0d9;
@@ -262,7 +268,8 @@ p {
 .card-secondary {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .card-row {
@@ -317,7 +324,7 @@ p {
 .btn-secondary {
   margin-bottom: 2rem;
   font-weight: 600;
-  width: 80%;
+  width: 100%;
   background-color: #2fc89b;
   padding: 2.6rem 10rem;
   color: white;
@@ -326,7 +333,7 @@ p {
 
 .btn-primary {
   color: white;
-  width: 80%;
+  width: 100%;
   margin-bottom: 2rem;
   font-weight: 600;
   font-size: 18px;
@@ -335,7 +342,6 @@ p {
 }
 
 .calender-title {
-  margin-top: 50px;
   margin-bottom: 10px;
   display: flex;
   gap: 17px;
@@ -350,18 +356,17 @@ p {
 }
 
 .day-picker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 1.6rem;
+  padding: 1rem;
+  text-align: center;
   border-radius: 5px;
   border: 1px solid #9cb0d9;
-  width: 5rem;
+  width: 52px;
 }
 
 .day-picker:hover {
   background-color: #0042cc;
   color: white;
+  font-weight: bold;
 }
 
 .day-picker .day {
@@ -379,12 +384,15 @@ p {
 }
 
 .card-calender-picker {
-  width: 70%;
+  width: 100%;
 }
 
 .pie-chart {
   margin: 2rem 4rem;
-  width: 60%;
+}
+
+.pie-chart img {
+  margin-bottom: 2rem;
 }
 
 .list .text-right {
@@ -417,7 +425,7 @@ p {
 }
 
 .map {
-  width: 80%;
+  width: 100%;
   margin-bottom: 3rem;
 }
 
@@ -455,7 +463,7 @@ p {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  width: 70%;
+  width: 100%;
 }
 
 .card-label {
@@ -511,18 +519,25 @@ p {
 }
 
 .bottom-container {
-  margin: 36px 200px;
+  max-width: 985px;
+  margin: 4rem auto;
+}
+
+.cta-bg {
+  border-radius: 10px;
+  background: #0042cc;
+  position: relative;
 }
 
 .call-to-action {
-  border-radius: 10px;
-  background: #0042cc;
-  padding: 90px 200px;
+  margin: 2rem auto;
+  padding: 90px 50px;
+  max-width: 1140px;
   display: flex;
-  position: relative;
   justify-content: space-between;
   background-image: url(/assets/background.svg);
-  background-position: 0;
+  position: relative;
+  width: 100vw;
 }
 
 .cta-title {
@@ -575,14 +590,21 @@ p {
 
 .cta-illustration {
   position: absolute;
-  right: 10%;
+  right: 0;
   bottom: 0;
+}
+
+.cta-bg::after {
+  content: url(/assets/polygon.svg);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .footer {
   display: flex;
-  justify-content: space-around;
-  margin: 6rem;
+  justify-content: space-between;
+  margin: 6rem auto;
   align-items: center;
   border-bottom: 1px solid #e7e7e7;
   padding-bottom: 20px;
@@ -604,9 +626,9 @@ p {
 
 .footer-nav {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 auto;
   border-bottom: 0;
-  margin-bottom: 0;
 }
 
 .footer-nav .list-item {
@@ -638,7 +660,6 @@ p {
 
 .copyright-footer {
   display: flex;
-  margin: 0 200px;
   justify-content: space-between;
   align-items: center;
 }
