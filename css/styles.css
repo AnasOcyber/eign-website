@@ -627,6 +627,7 @@ p {
 .footer-nav {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   margin: 0 auto;
   border-bottom: 0;
 }
@@ -647,15 +648,19 @@ p {
 
 .social-icon {
   display: inline-flex;
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 16px;
   background-color: white;
   border-radius: 50%;
   margin-right: 10px;
   box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.05);
+}
+
+.footer-nav a {
+  text-decoration: none;
 }
 
 .copyright-footer {
